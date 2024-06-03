@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import "./Header.css";
-
+import CartContext from "../../Cart/CartContext";
 
 const Header = (props) => {
-  
+  const { cartCount } = useContext(CartContext);
 
   const handleClick = () => {
     props.onShowCart();
@@ -17,7 +17,7 @@ const Header = (props) => {
         <li className="header-option">About Us👤</li>
         <li className="header-option">Contact us📞</li>
         <button className="header-option" onClick={handleClick}>
-          Cart🛒
+          Cart🛒{cartCount}
         </button>
       </div>
     </div>
